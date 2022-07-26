@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import MainView from '../views/MainView/MainView.vue';
+import ListTasks from "../views/ListTasks/ListTasks.vue";
 
 const router = createRouter({
         history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,7 +7,7 @@ const router = createRouter({
                 {
                         path: "/",
                         name: "main",
-                        component: MainView,
+                        component: ListTasks,
                 },
                 {
                         path: "/login",
@@ -18,11 +18,6 @@ const router = createRouter({
                         path: "/createuser",
                         name: "createuser",
                         component: ()=> import('../views/CreateUser/CreateUser.vue')
-                },
-                {
-                        path: '/list',
-                        name: 'list',
-                        component: ()=> import('../views/ListTasks/ListTasks.vue')
                 }
         ],
 });
