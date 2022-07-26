@@ -1,17 +1,9 @@
 <template>
-      <header>
-        <nav>
-          <NavBar />
-        </nav>
-    </header>
-    <aside>
-      <Aside />
-    </aside>
+<p>main view</p>
 </template>
 
 <script setup>
-import NavBar from '../../components/NavBar/NavBar.vue';
-import Aside from '../../components/Aside/Aside.vue';
+
 </script>
 
 <style>

@@ -1,3 +1,4 @@
+import axios from "axios";
 import { defineStore } from "pinia";
 
 export const useToDoList = defineStore({
@@ -5,12 +6,15 @@ export const useToDoList = defineStore({
         state: () => ({
                 list: [],
         }),
-        getters: {
-                doubleCount: (state) => state.list * 2,
-        },
         actions: {
                 increment() {
                         this.list++;
                 },
+                async getToDoList (){
+                        const url = "http://localhost:5000/todo";
+                        const dataGet = await axios.get(url);
+                        this.list = await dataGet.data;
+                        console.log(this.list);
+                }
         },
 });

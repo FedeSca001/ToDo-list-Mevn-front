@@ -19,6 +19,11 @@ const router = createRouter({
                         name: "createuser",
                         component: ()=> import('../views/CreateUser/CreateUser.vue')
                 },
+                {
+                        path: '/list',
+                        name: 'list',
+                        component: ()=> import('../views/ListTasks/ListTasks.vue')
+                }
         ],
 });
 
