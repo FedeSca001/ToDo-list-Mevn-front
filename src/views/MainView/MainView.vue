@@ -1,11 +1,17 @@
 <template>
-  <p>MAIN VIEW</p>
+      <header>
+        <nav>
+          <NavBar />
+        </nav>
+    </header>
+    <aside>
+      <Aside />
+    </aside>
 </template>
 
-<script>
-export default {
-
-}
+<script setup>
+import NavBar from '../../components/NavBar/NavBar.vue';
+import Aside from '../../components/Aside/Aside.vue';
 </script>
 
 <style>

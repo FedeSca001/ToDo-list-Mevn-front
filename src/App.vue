@@ -1,19 +1,14 @@
-
 <template>
-  <header>
-      <nav>
-        <NavBar />
-      </nav>
-  </header>
-
-  <RouterView />
+  <RouterView v-if="users.user.name"/>
+  <LogIn v-else/>
 </template>
 
 <script setup>
-import { RouterLink, RouterView } from 'vue-router';
-import NavBar from './components/NavBar/NavBar.vue';
+import LogIn from './views/LogIn/LogIn.vue';
+import { RouterView } from 'vue-router';
+import { useUsers } from './stores/user';
+const users = useUsers();
 </script>
-
 
 <style scoped>
 
