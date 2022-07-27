@@ -7,9 +7,6 @@ export const useToDoList = defineStore({
                 list: [],
         }),
         actions: {
-                increment() {
-                        this.list++;
-                },
                 async getToDoList (){
                         const url = "http://localhost:5000/todo";
                         const dataGet = await axios.get(url);
@@ -17,12 +14,27 @@ export const useToDoList = defineStore({
                 },
                 async deletItem (idItem){
                         try{
-                                const url = "http://localhost:5000/todo/delete/"+ idItem;
+                                const url = "http://localhost:5000/todo/delete/"+ String(idItem);
                                 const delet = await axios.delete(url);
                                 this.getToDoList();
                         } catch{
                                 err=> console.log(err);
                         }
+                },
+                async addItemTask (tit, tex, prior){
+                        const data = {
+                                title: tit,
+                                text: tex,
+                                priority: prior,
+                                date: {
+                                        hour:`${new Date().getHours()}:${new Date().getMinutes()}`,
+                                        fecha: `${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()}`
+                                        },
+                                status: false,
+                        };
+                        const url = "http://localhost:5000/todo/item";
+                        const post = await axios.post(url, data);
+                        this.getToDoList();
                 }
         },
 });

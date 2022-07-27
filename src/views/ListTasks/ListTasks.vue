@@ -5,35 +5,24 @@
       <h3>Title</h3>
       <h3>Text</h3>
       <h3 class="priorityItem">Priority</h3>
-      <h3 class="statusItem">Status</h3>
       <h3 class="edits">Edit</h3>
     </li>
     <li v-for="item in toDoList.list" :key="item.id">
-      <h3 class="titleItem">{{item.title}}</h3>
-      <h3>{{item.text}}</h3>
-      <h3 class="priorityItem">{{item.priority}}</h3>
-      <h3 class="statusItem" v-if="item.status">Ok</h3>
-      <h3 class="statusItem" v-else>Not</h3>
-      <div class="edits">
-        <button @click="toDoList.deletItem(item.id)">x</button>
-      </div>
+      <ItemTask :itemArray="item" />
     </li>
     <li>
-      <input type="text" placeholder="Title">
-      <textarea >Text</textarea>
-      <input type="number" v-model="prioryIn">
-      <input type="submit" placeholder="Send">
+      <AddTask />
     </li>
   </ul>
 </template>
 
 <script setup>
-import { ref } from '@vue/reactivity';
 import {useToDoList} from '../../stores/toDo';
+import AddTask from '../../components/AddTask/AddTask.vue'
+import ItemTask from '../../components/ItemTask/ItemTask.vue'
 
 const toDoList = useToDoList();
 toDoList.getToDoList()
-const prioryIn = ref(0)
 
 </script>
 
@@ -52,17 +41,5 @@ h3{
   display: block;
   width: 20vw;
   padding: 2vw;
-}
-.titleItem{
-  font-size: 2vw;
-}
-.priorityItem{
-  width: 10vw;
-}
-.statusItem{
-  width: 8vw;
-}
-.edits{
-  width: 10vw;
 }
 </style>
