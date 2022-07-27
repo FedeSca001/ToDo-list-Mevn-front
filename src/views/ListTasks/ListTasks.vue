@@ -6,6 +6,7 @@
       <h3>Text</h3>
       <h3 class="priorityItem">Priority</h3>
       <h3 class="statusItem">Status</h3>
+      <h3 class="edits">Edit</h3>
     </li>
     <li v-for="item in toDoList.list" :key="item.id">
       <h3 class="titleItem">{{item.title}}</h3>
@@ -13,6 +14,9 @@
       <h3 class="priorityItem">{{item.priority}}</h3>
       <h3 class="statusItem" v-if="item.status">Ok</h3>
       <h3 class="statusItem" v-else>Not</h3>
+      <div class="edits">
+        <button @click="toDoList.deletItem(item.id)">x</button>
+      </div>
     </li>
     <li>
       <input type="text" placeholder="Title">
@@ -24,11 +28,12 @@
 </template>
 
 <script setup>
+import { ref } from '@vue/reactivity';
 import {useToDoList} from '../../stores/toDo';
 
 const toDoList = useToDoList();
-const get = toDoList.getToDoList()
-const prioryIn = 0
+toDoList.getToDoList()
+const prioryIn = ref(0)
 
 </script>
 
@@ -56,5 +61,8 @@ h3{
 }
 .statusItem{
   width: 8vw;
+}
+.edits{
+  width: 10vw;
 }
 </style>
