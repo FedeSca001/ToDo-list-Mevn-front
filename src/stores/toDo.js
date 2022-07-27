@@ -26,10 +26,6 @@ export const useToDoList = defineStore({
                                 title: tit,
                                 text: tex,
                                 priority: prior,
-                                date: {
-                                        hour:`${new Date().getHours()}:${new Date().getMinutes()}`,
-                                        fecha: `${new Date().getDate()}/${new Date().getMonth()+1}/${new Date().getFullYear()}`
-                                        },
                                 status: false,
                         };
                         const url = "http://localhost:5000/todo/item";
