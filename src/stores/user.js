@@ -6,9 +6,9 @@ export const useUsers = defineStore({
         state: () => ({
             user: {},
             createUser: false,
-            find: {
+            logInU: {
                 name: '',
-                password: ''
+                pass: ''
             }
         }),
         getters: {
@@ -26,6 +26,18 @@ export const useUsers = defineStore({
                     console.log(this.user)
                 }catch{
                     err => console.log(err);
+                }
+            },
+            async logInUser (state){
+                try {
+                    const name = state.logInU.name;
+                    const pass = state.logInU.pass;
+                    const url = "http://localhost:5000/user/"+name+"/"+pass;
+                    const dataGet = await axios.get(url);
+                    this.user = await dataGet.data;
+                    console.log(this.user);
+                } catch (error) {
+                    console.log(err);
                 }
             }
         },

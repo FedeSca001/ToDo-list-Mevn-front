@@ -8,16 +8,6 @@ const router = createRouter({
                         path: "/",
                         name: "main",
                         component: ListTasks,
-                },
-                {
-                        path: "/login",
-                        name: "login",
-                        component: () => import("../views/LogIn/LogIn.vue"),
-                },
-                {
-                        path: "/createuser",
-                        name: "createuser",
-                        component: ()=> import('../views/CreateUser/CreateUser.vue')
                 }
         ],
 });
