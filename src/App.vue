@@ -1,5 +1,6 @@
 <template>
-  <div v-if="show === {}">
+  <LogIn v-if="userStore === 'none'"/>
+  <div v-else>
     <header >
       <nav>
         <NavBar />
@@ -11,9 +12,7 @@
     <article>
       <RouterView/>
     </article>
-    </div>
-    <LogIn v-else/>
-
+  </div>
 </template>
 
 <script setup>
@@ -23,7 +22,7 @@ import Aside from './components/Aside/Aside.vue';
 import { RouterView } from 'vue-router';
 import { useUsers } from './stores/user';
 const users = useUsers();
-const show = users.user;
+const userStore = users.user;
 </script>
 
 <style scoped>
