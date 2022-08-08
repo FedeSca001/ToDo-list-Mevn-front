@@ -1,7 +1,7 @@
 <template>
   <LogIn v-if="userStore === 'none'"/>
   <div v-else>
-    <header >
+    <header>
       <nav>
         <NavBar />
       </nav>
@@ -25,6 +25,8 @@ const users = useUsers();
 const userStore = users.user;
 </script>
 
-<style scoped>
-
+<style>
+*{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 </style>

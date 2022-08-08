@@ -1,29 +1,63 @@
 <template>
-  <form @submit="user.logInUser()" v-if="!createU" >
-    <div>
-      <label>User Name</label>
-      <input type="text" v-model="user.logInU.name">
+  <div  v-if="!createU" 
+        class="formContain">
+    <div class="divSep">
+      <label class="label">User Name</label>
+      <input class="inputData" type="text" v-model="user.logInU.name">
+    </div>
+    <div class="divSep">
+      <label class="label">Password</label>
+      <input class="inputData" type="text" v-model="user.logInU.pass">
     </div>
     <div>
-      <label>Password</label>
-      <input type="text" v-model="user.logInU.pass">
+      <button @click="user.logInUser()" class="sendBtn">Send</button>
+      <button class="sendBtn createBtn">Create</button>
     </div>
-    <div>
-      <input type="submit" value="send"/>
-    </div>
-  </form>
+  </div>
   <CreateUser v-else/>
-
 </template>
 
 <script setup>
 import CreateUser from '../LogIn/CreateUser.vue'
-import { ref } from '@vue/reactivity';
 import {useUsers} from '../../stores/user';
 const user = useUsers()
 const createU = user.createUser;
 </script>
 
-<style>
-
+<style scoped>
+.formContain{
+  background-color: brown;
+  border-radius: 2.5vw;
+  width: 30vw;
+  margin: 15vw auto;
+  padding: 3vw;
+  align-self: center;
+}
+.divSep{
+  margin-bottom: 1.3vw;
+}
+.label{
+  color: white;
+  font-weight: 700;
+  font-size: 2vw;
+  margin-right: 1vw;
+}
+.inputData{
+  border-radius: 0.4vw;
+  display: inline-block;
+  background-color: rgb(255, 201, 191);
+  margin-right: 0;
+}
+.sendBtn{
+  font-size: 1.8vw;
+  padding: 1vw 2vw;
+  border: none;
+  border-radius: 1vw;
+  background-color: rgb(1, 124, 7);
+  color: white
+}
+.createBtn{
+  margin-left: 2vw;
+  background-color: rgb(1, 116, 124);
+}
 </style>
