@@ -4,7 +4,7 @@ import { defineStore } from "pinia";
 export const useUsers = defineStore({
         id: "userList",
         state: () => ({
-            user: 'none',//Add local storage 
+            user: '',
             createUser: false,
             logInU: {
                 name: '',
@@ -22,11 +22,10 @@ export const useUsers = defineStore({
                 try {
                     const name = this.logInU.name;
                     const pass = this.logInU.pass;
+                    console.log(name+'----'+pass);
                     const url = "http://localhost:5000/user/"+String(name)+"/"+String(pass);
                     const dataGet = await axios.get(url);
-                    console.log(dataGet.data);
-                    console.log(this.user);
-                    return (this.user = await dataGet.data);
+                    return (this.user = await sessionStorage.setItem("user",JSON.stringify(this.logInU)));
                 } catch (error) {
                     console.log(err);
                 }
