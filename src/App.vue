@@ -37,6 +37,7 @@ html{
 body{
   min-height: 100%;
   min-width: 100%;
+  background-color: rgb(75, 69, 69);
 }
 .header{
   grid-area: header;

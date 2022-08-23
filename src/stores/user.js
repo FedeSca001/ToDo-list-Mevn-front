@@ -20,18 +20,27 @@ export const useUsers = defineStore({
             },
             async logInUser (){
                 try {
-                    const name = this.logInU.name;
-                    const pass = this.logInU.pass;
-                    console.log(name+'----'+pass);
-                    const url = "http://localhost:5000/user/"+String(name)+"/"+String(pass);
-                    const dataGet = await axios.get(url);
-                    return (this.user = await sessionStorage.setItem("user",JSON.stringify(this.logInU)));
+                        const name = this.logInU.name;
+                        const pass = this.logInU.pass;
+                        console.log(name + "----" + pass);
+                        const url =
+                                "http://localhost:5000/user/" +
+                                String(name) +
+                                "/" +
+                                String(pass);
+                        const dataGet = await axios.get(url);
+                        location.reload();
+                        return (this.user = await sessionStorage.setItem(
+                                "user",
+                                JSON.stringify(this.logInU)
+                        ));
                 } catch (error) {
                     console.log(err);
                 }
             },
             logOut(){
-                return (this.user = "none");
+                sessionStorage.clear();
+                localStorage.clear();
             }
         },
 });

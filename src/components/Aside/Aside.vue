@@ -1,5 +1,5 @@
 <template>
-  <p>ASIDE</p>
+  <p>Select and filter</p>
 </template>
 
 <script>
