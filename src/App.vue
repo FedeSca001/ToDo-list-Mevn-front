@@ -1,10 +1,8 @@
 <template>
   <div v-if="showApp" class="container">
-    <header class="header">
-      <nav>
-        <NavBar />
-      </nav>
-    </header>
+    <nav class="header">
+      <NavBar />
+    </nav>
     <aside class="aside">
       <Aside />
     </aside>
@@ -27,19 +25,18 @@ const showApp = JSON.parse(sessionStorage.getItem("user")) || false;
 </script>
 
 <style>
+*{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0px;
+  margin: 0px;
+}
 html{
   height: 100%;
+  width: 100%;
 }
 body{
   min-height: 100%;
-}
-*{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-.container{
-  display: grid;
-  gap: 1vw;
-  grid-template-areas: "header" "aside" "article";
+  min-width: 100%;
 }
 .header{
   grid-area: header;
@@ -53,5 +50,28 @@ body{
   grid-area: article;
   background-color: blueviolet;
 }
-
+.container{
+  display: grid;
+  gap: 1vw;
+  grid-template: 
+    "header" 15%
+    "aside"  20%
+    "article" auto;
+}
+@media ( min-width: 600px ) {
+  .container{
+    grid-template: 
+      "header header"  15%
+      "aside  article" 85% /
+      25%     auto;
+  }
+}
+@media ( min-width: 950px ) {
+  .container{
+    grid-template: 
+      "header header"  15%
+      "aside  article" 85% /
+      30%     auto;
+  }
+}
 </style>

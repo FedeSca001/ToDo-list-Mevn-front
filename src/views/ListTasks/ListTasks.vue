@@ -33,32 +33,20 @@ toDoList.getToDoList()
 }
 li{
   display: flex;
-  width: 80vw;
 }
 .headerTable{
   background-color: rgb(177, 177, 177);
+  width: 20vw;
 }
 .priorityItem{
-  width: 6vw;
   text-align: center;
 }
 h3{
   display: block;
-  width: 20vw;
   padding: 2vw;
   text-align: center;
 }
 .edits{
-  width: 10vw;
   display: flex;
-}
-.textLi{
-    width: 20vw;
-}
-.titelLi{
-  width: 12vw;
-}
-.statusLi{
-  width: 6vw;
 }
 </style>
