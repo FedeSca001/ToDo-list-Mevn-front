@@ -29,7 +29,7 @@ toDoList.getToDoList()
 ul{
   list-style: none;
   width: 90%;
-  background-color: blanchedalmond;
+  background-color: rgb(223, 223, 223);
   margin: 2vw auto;
   border-radius: 5px;
 }

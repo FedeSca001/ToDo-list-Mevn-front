@@ -5,7 +5,7 @@
   <h3 v-if="itemArray.status">Ok</h3>
   <h3 v-else>Await</h3>
   <h3>
-      <button @click="toDoList.deletItem(itemArray._id)">x</button>
+      <button class="btnDelete" @click="toDoList.deletItem(itemArray._id)">x</button>
   </h3>
 </template>
 
@@ -28,11 +28,23 @@ h3{
   padding: 2vw;
   text-align: center;
   width: 20%;
-  background-color: blue;
+  background-color: rgb(206, 206, 206);
   font-size: 1.5vw;
 }
 .description{
   text-align: initial;
   font-size: 1vw;
+}
+.btnDelete{
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5vw;
+  background-color: rgb(255, 49, 49);
+}
+.btnDelete:hover{
+  color: white;
+  background-color: rgb(240, 2, 2);
+  font-weight: bold;
 }
 </style>

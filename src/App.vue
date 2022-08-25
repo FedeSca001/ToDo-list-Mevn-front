@@ -35,43 +35,42 @@ html{
   width: 100%;
 }
 body{
-  min-height: 100%;
   min-width: 100%;
   background-color: rgb(75, 69, 69);
 }
 .header{
   grid-area: header;
-  background-color: blueviolet;
+  background-color: white;
 }
 .aside{
   grid-area: aside;
-  background-color: blueviolet;
+  background-color: white;
 }
 .article{
   grid-area: article;
-  background-color: blueviolet;
+  background-color: white;
 }
 .container{
   display: grid;
   gap: 1vw;
   grid-template: 
-    "header" 15%
-    "aside"  20%
-    "article" auto;
+    "header" 15vh
+    "aside"  20vh
+    "article" 65vh;
 }
 @media ( min-width: 600px ) {
   .container{
     grid-template: 
-      "header header"  15%
-      "aside  article" 85% /
+      "header header"  15vh
+      "aside  article" 85vh /
       25%     auto;
   }
 }
 @media ( min-width: 950px ) {
   .container{
     grid-template: 
-      "header header"  15%
-      "aside  article" 85% /
+      "header header"  15vh
+      "aside  article" 80.5vh /
       30%     auto;
   }
 }
