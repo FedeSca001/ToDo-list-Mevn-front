@@ -36,19 +36,23 @@ html{
 }
 body{
   min-width: 100%;
-  background-color: rgb(75, 69, 69);
+  background-image: linear-gradient(135deg,rgb(2, 14, 68),rgb(87, 8, 87),purple);
+  background-size: 100%;
 }
 .header{
   grid-area: header;
-  background-color: white;
+  background-image: linear-gradient(135deg,rgba(10, 68, 2, 0.466),rgb(44, 87, 8, 0.466),rgb(128, 115, 0, 0.466));
+    background-size: 100%;
 }
 .aside{
   grid-area: aside;
-  background-color: white;
+  background-image: linear-gradient(135deg,rgba(10, 68, 2, 0.466),rgb(44, 87, 8, 0.466),rgb(128, 115, 0, 0.466));
+    background-size: 280%;
 }
 .article{
   grid-area: article;
-  background-color: white;
+  background-image: linear-gradient(135deg,rgba(10, 68, 2, 0.466),rgb(44, 87, 8, 0.466),rgb(128, 115, 0, 0.466));
+  background-size: 100%;
 }
 .container{
   display: grid;
@@ -61,16 +65,16 @@ body{
 @media ( min-width: 600px ) {
   .container{
     grid-template: 
-      "header header"  15vh
-      "aside  article" 85vh /
+      "header header"  11vh
+      "aside  article" 89vh /
       25%     auto;
   }
 }
 @media ( min-width: 950px ) {
   .container{
     grid-template: 
-      "header header"  15vh
-      "aside  article" 80.5vh /
+      "header header"  11vh
+      "aside  article" 86vh /
       30%     auto;
   }
 }

@@ -1,8 +1,6 @@
 <template>
-  <div class="navContain">
-    <h1>TASKS APP</h1>
-    <button @click="out" >Log Out</button>
-  </div>
+  <h1>TASKS APP</h1>
+  <button @click="out" class="btn" >Log Out</button>
 </template>
 
 <script setup>
@@ -15,7 +13,14 @@ function out() {
 </script>
 
 <style scoped>
-.navContain{
-  display: flex;
+h1{
+  display: inline-block;
+  font-size: 26pt;
+  color: #4bace9;
+  margin: 2.8vh auto;
+  text-align: center;
+}
+.btn{
+  margin: 0.1vh 2vw;
 }
 </style>
