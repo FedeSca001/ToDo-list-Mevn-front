@@ -28,12 +28,13 @@ h3{
   padding: 2vw;
   text-align: center;
   width: 20%;
-  background-color: rgb(206, 206, 206);
+  background-color: rgba(255, 255, 255, 0.2);
   font-size: 1.5vw;
 }
 .description{
   text-align: initial;
   font-size: 1vw;
+  font-weight: bold;
 }
 .btnDelete{
   padding: 0.7rem 1rem;

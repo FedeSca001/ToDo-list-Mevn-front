@@ -38,6 +38,7 @@ body{
   min-width: 100%;
   background-image: linear-gradient(135deg,rgb(180, 255, 180),rgb(148, 166, 245),rgb(255, 219, 173),rgb(255, 199, 255));
   background-size: 100%;
+  transition: 600ms;
 }
 .header{
   grid-area: header;

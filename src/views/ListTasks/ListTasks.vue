@@ -1,18 +1,18 @@
 <template>
-  <h1>Tasks</h1>
-  <ul class="listTasks">
-    <li class="headerTable">
-      <h3>Title</h3>
-      <h3>Text</h3>
-      <h3>Priority</h3>
-      <h3>Status</h3>
-      <h3>Edit</h3>
-    </li>
-    <li v-for="item in toDoList.list" :key="item.id">
-      <ItemTask :itemArray="item"/>
-    </li>
-  </ul>
-  <AddTask />
+    <h1>Tasks list</h1>
+    <ul class="listTasks">
+      <li>
+        <h3>Title</h3>
+        <h3>Text</h3>
+        <h3>Priority</h3>
+        <h3>Status</h3>
+        <h3>Edit</h3>
+      </li>
+      <li v-for="item in toDoList.list" :key="item.id">
+        <ItemTask :itemArray="item"/>
+      </li>
+    </ul>
+    <AddTask />
 </template>
 
 <script setup>
@@ -26,10 +26,15 @@ toDoList.getToDoList()
 </script>
 
 <style scoped>
+h1{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 24pt;
+}
 ul{
   list-style: none;
   width: 90%;
-  background-color: rgb(223, 223, 223);
+  background-color: rgb(255, 255, 255, 0.5);
   margin: 2vw auto;
   border-radius: 5px;
 }
