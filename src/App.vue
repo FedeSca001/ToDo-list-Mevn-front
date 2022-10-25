@@ -36,7 +36,7 @@ html{
 }
 body{
   min-width: 100%;
-  background-image: linear-gradient(135deg,rgb(2, 14, 68),rgb(87, 8, 87),purple);
+  background-image: linear-gradient(135deg,rgb(180, 255, 180),rgb(148, 166, 245),rgb(255, 219, 173),rgb(255, 199, 255));
   background-size: 100%;
 }
 .header{

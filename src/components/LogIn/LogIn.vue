@@ -7,7 +7,7 @@
     </div>
     <div class="divSep">
       <label class="label">Password</label>
-      <input class="inputData" type="text" v-model="user.logInU.pass">
+      <input class="inputData" type="password" v-model="user.logInU.pass">
     </div>
     <div>
       <button @click="user.logInUser()" class="sendBtn">Send</button>
@@ -21,14 +21,16 @@
 import CreateUser from '../LogIn/CreateUser.vue'
 import {useUsers} from '../../stores/user';
 const user = useUsers()
+user.logInU.name = "FedeSca001";
+user.logInU.pass = "lcdtm1234";
 const createU = user.createUser;
 </script>
 
 <style scoped>
 .formContain{
-  background-color: brown;
+  background-color: rgba(255, 47, 47, 0.37);
   border-radius: 2.5vw;
-  width: 30vw;
+  width: 25vw;
   margin: 15vw auto;
   padding: 3vw;
   align-self: center;
@@ -37,9 +39,9 @@ const createU = user.createUser;
   margin-bottom: 1.3vw;
 }
 .label{
-  color: white;
-  font-weight: 700;
-  font-size: 2vw;
+  color: rgb(31, 0, 12);
+  font-weight: 900;
+  font-size: 20pt;
   margin-right: 1vw;
 }
 .inputData{
@@ -50,14 +52,20 @@ const createU = user.createUser;
 }
 .sendBtn{
   font-size: 1.8vw;
-  padding: 1vw 2vw;
+  padding: 0.8vw 1.3vw;
   border: none;
   border-radius: 1vw;
-  background-color: rgb(1, 124, 7);
+  background-color: rgba(0, 105, 5, 0.623);
   color: white
+}
+.sendBtn:hover{
+  background-color: rgb(0, 85, 5);
 }
 .createBtn{
   margin-left: 2vw;
-  background-color: rgb(1, 116, 124);
+  background-color: rgb(1, 116, 124, 0.623);
+}
+.createBtn:hover{
+  background-color: rgb(1, 81, 87);
 }
 </style>
