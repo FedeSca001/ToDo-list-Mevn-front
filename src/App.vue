@@ -10,7 +10,35 @@
       <RouterView/>
     </article>
   </div>
-  <LogIn v-else/>
+  <div class="contBub" v-else>
+      <div class="bubbles">
+        <div style="--i:11;"></div>
+        <div style="--i:16;"></div>
+        <div style="--i:10;"></div>
+        <div style="--i:9;"></div>
+        <div style="--i:21;"></div>
+        <div style="--i:17;"></div>
+        <div style="--i:26;"></div>
+        <div style="--i:22;"></div>
+        <div style="--i:13;"></div>
+        <div style="--i:2;"></div>
+        <div style="--i:11;"></div>
+        <div style="--i:15;"></div>
+        <div style="--i:11;"></div>
+        <div style="--i:16;"></div>
+        <div style="--i:10;"></div>
+        <div style="--i:19;"></div>
+        <div style="--i:21;"></div>
+        <div style="--i:17;"></div>
+        <div style="--i:26;"></div>
+        <div style="--i:22;"></div>
+        <div style="--i:13;"></div>
+        <div style="--i:2;"></div>
+        <div style="--i:11;"></div>
+        <div style="--i:15;"></div>
+    </div>
+  <LogIn />
+  </div>
 </template>
 
 <script setup>
@@ -40,6 +68,42 @@ body{
   background-image: linear-gradient(135deg,rgb(180, 255, 180),rgb(148, 166, 245),rgb(255, 219, 173),rgb(255, 199, 255));
   background-size: 100%;
   transition: 600ms;
+  position: relative;
+}
+.contBub{
+  width: 100%;
+
+}
+.bubbles{
+
+  display: flex;
+}
+.bubbles div {
+
+  width: 30px;
+  height: 30px;
+  margin: 0px 2px;
+  background-color: rgb(95, 170, 19);
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px rgba(255, 255, 0, 0.3),
+  0 0 50px rgba(141, 7, 7),
+  0 0 100px rgba(141, 7, 7);
+  animation: animate 15s linear infinite;
+  animation-duration: calc(120s / var(--i));
+}
+.bubbles div:nth-child(even){
+  background-color: rgb(255, 110, 110);
+  box-shadow: 0 0 0 10px rgba(255, 255, 0, 0.3),
+  0 0 50px rgb(255, 110, 110),
+  0 0 100px rgb(255, 110, 110);
+}
+@keyframes animate {
+  0%{
+    transform: translateY(100vh) scale(0);
+  }
+  100%{
+    transform: translateY(-10vh) scale(1);
+  }
 }
 .header{
   grid-area: header;
