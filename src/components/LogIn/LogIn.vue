@@ -11,7 +11,6 @@
     </div>
     <div>
       <button @click="user.logInUser()" class="sendBtn">Send</button>
-      <button class="sendBtn createBtn">Create</button>
     </div>
   </div>
   <CreateUser v-else/>
@@ -56,16 +55,11 @@ const createU = user.createUser;
   border: none;
   border-radius: 1vw;
   background-color: rgba(0, 105, 5, 0.623);
-  color: white
+  color: white;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .sendBtn:hover{
-  background-color: rgb(0, 85, 5);
-}
-.createBtn{
-  margin-left: 2vw;
-  background-color: rgb(1, 116, 124, 0.623);
-}
-.createBtn:hover{
-  background-color: rgb(1, 81, 87);
+  background-color: rgba(0, 163, 11, 0.787);
+  box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 </style>

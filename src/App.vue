@@ -26,6 +26,7 @@ const showApp = JSON.parse(sessionStorage.getItem("user")) || false;
 
 <style>
 *{
+  box-sizing: border-box;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding: 0px;
   margin: 0px;

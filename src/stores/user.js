@@ -34,8 +34,8 @@ export const useUsers = defineStore({
                                 "user",
                                 JSON.stringify(this.logInU)
                         ));
-                } catch (error) {
-                    console.log(err);
+                } catch (err) {
+                    alert('No pude'+ err);
                 }
             },
             logOut(){
