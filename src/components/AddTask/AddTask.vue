@@ -35,6 +35,9 @@ const useToDo = useToDoList();
     margin: 0.5vw 1vw;
     width: 70%;
 }
+h4{
+    font-size: 20pt;
+}
 .btnNew{
     padding: 0.5rem 1rem;
     background-color: rgb(21, 255, 33);
