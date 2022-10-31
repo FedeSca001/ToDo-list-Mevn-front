@@ -1,7 +1,8 @@
 <template>
     <div class="containinput">
+        <h4>Add new task</h4>
         <input class="input" v-model="tit" type="text" placeholder="Title">
-        <textarea class="input" placeholder="Task text" v-model="tex" >Text</textarea>
+        <textarea class="texTarea" placeholder="Task text" v-model="tex" >Text</textarea>
         <input class="input" type="number" placeholder="Priority" v-model="prior" >
         <button type="buttom" class="btnNew" @click="useToDo.addItemTask (tit, tex, prior)">Send</button>
     </div>
@@ -19,19 +20,21 @@ const useToDo = useToDoList();
 
 <style scoped>
 .containinput{
-    display: flex;
+    background-color: white;
     width: 90%;
     margin: 1vw auto;
-    border-bottom: 2vw;
-    justify-content: center;
+    padding: 2vw 1vw;
+    border-radius: 1vw;
 }
 .input{
-    margin: 0 1vw;
+    margin: 0.5vw 1vw;
     border-radius: 0.5vw;
-    background-color: rgb(245, 245, 245);
 }
-
-
+.texTarea{
+    height: 50px;
+    margin: 0.5vw 1vw;
+    width: 70%;
+}
 .btnNew{
     padding: 0.5rem 1rem;
     background-color: rgb(21, 255, 33);

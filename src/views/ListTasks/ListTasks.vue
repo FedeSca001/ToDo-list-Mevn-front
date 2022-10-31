@@ -12,12 +12,10 @@
         <ItemTask :itemArray="item"/>
       </li>
     </ul>
-    <AddTask />
 </template>
 
 <script setup>
 import {useToDoList} from '../../stores/toDo';
-import AddTask from '../../components/AddTask/AddTask.vue'
 import ItemTask from '../../components/ItemTask/ItemTask.vue'
 
 const toDoList = useToDoList();
