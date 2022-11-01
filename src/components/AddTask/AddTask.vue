@@ -15,14 +15,13 @@ const tit = ref();
 const tex = ref();
 const prior = ref();
 const useToDo = useToDoList();
-
 </script>
 
 <style scoped>
 .containinput{
     background-color: white;
     width: 90%;
-    margin: 1vw auto;
+    margin: 1.8vw auto;
     padding: 2vw 1vw;
     border-radius: 1vw;
 }

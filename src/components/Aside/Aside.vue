@@ -1,7 +1,7 @@
 <template>
-  <h2>Select and filter</h2>
-  <router-link to="/"><div>Init</div></router-link>
-  <router-link to="/allTasks"><div>All tasks</div> </router-link>
+  <h2 class="h2Title">Select and filter</h2>
+  <router-link to="/"><div class="item">Init</div></router-link>
+  <router-link to="/allTasks"><div class="item">All tasks</div> </router-link>
   <AddTask />
 
 </template>
@@ -11,7 +11,13 @@ import AddTask from '../AddTask/AddTask.vue'
 </script>
 
 <style scoped>
-h2{
+.h2Title{
   color: white;
+  font-size: 22pt;
+  margin: 0.5vw auto;
+}
+.item{
+  font-size: 18pt;
+  padding-left: 0.5vw;
 }
 </style>

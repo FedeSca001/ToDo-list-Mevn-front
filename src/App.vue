@@ -55,8 +55,9 @@ body{
 }
 .aside{
   grid-area: aside;
+  padding: 1.5vw;
   background-image: linear-gradient(135deg,rgba(10, 68, 2, 0.466),rgb(44, 87, 8, 0.466),rgb(128, 115, 0, 0.466));
-    background-size: 280%;
+  background-size: 280%;
 }
 .article{
   grid-area: article;
