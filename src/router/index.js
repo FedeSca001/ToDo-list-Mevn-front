@@ -10,8 +10,13 @@ const router = createRouter({
                 },
                 {
                         path: "/allTasks",
-                        component: ()=> import("../views/ListTasks/ListTasks.vue")
-                }
+                        component: () =>
+                                import("../views/ListTasks/ListTasks.vue"),
+                },
+                {
+                        path: "/filtredPriority",
+                        component: () => import("../views/PriorityFiltred/PriorityFiltred.vue")
+                },
         ],
 });
 

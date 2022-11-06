@@ -1,7 +1,8 @@
 <template>
   <h2 class="h2Title">Select and filter</h2>
   <router-link to="/"><div class="item">Init</div></router-link>
-  <router-link to="/allTasks"><div class="item">All tasks</div> </router-link>
+  <router-link to="/allTasks"><div class="item">All tasks</div></router-link>
+  <router-link to="/filtredPriority"><div class="item">Priority Filtred</div></router-link>
   <AddTask />
 
 </template>

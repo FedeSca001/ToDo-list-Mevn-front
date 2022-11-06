@@ -16,13 +16,11 @@ export const useUsers = defineStore({
         actions: {
             switch() {
                 this.createUser = !this.createUser;
-                console.log(this.createUser);
             },
             async logInUser (){
                 try {
                         const name = this.logInU.name;
                         const pass = this.logInU.pass;
-                        console.log(name + "----" + pass);
                         const url =
                                 "http://localhost:5000/user/" +
                                 String(name) +
