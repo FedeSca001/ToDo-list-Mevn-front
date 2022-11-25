@@ -11,6 +11,7 @@ export const useToDoList = defineStore({
                         const url = "http://localhost:5000/todo";
                         const dataGet = await axios.get(url);
                         this.list = await dataGet.data;
+                        console.log(this.list);
                 },
                 async deletItem (idItem){
                         try{
