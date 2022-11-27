@@ -16,7 +16,7 @@ export default {
     setup(){
         const toDoList = useToDoList();
         return{
-            toDoList
+          toDoList
         }
     }
 }
