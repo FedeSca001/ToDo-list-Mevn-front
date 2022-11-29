@@ -8,14 +8,14 @@ export const useToDoList = defineStore({
         }),
         actions: {
                 async getToDoList (){
-                        const url = "http://localhost:5000/todo";
+                        const url = "https://to-do-list-nbcl.onrender.comtodo";
                         const dataGet = await axios.get(url);
                         this.list = await dataGet.data;
                         console.log(this.list);
                 },
                 async deletItem (idItem){
                         try{
-                                const url = "http://localhost:5000/todo/delete/"+ String(idItem);
+                                const url = "https://to-do-list-nbcl.onrender.comtodo/delete/"+ String(idItem);
                                 const delet = await axios.delete(url);
                                 this.getToDoList();
                         } catch{
@@ -29,7 +29,7 @@ export const useToDoList = defineStore({
                                 priority: prior,
                                 status: false,
                         };
-                        const url = "http://localhost:5000/todo/item";
+                        const url = "https://to-do-list-nbcl.onrender.comtodo/item";
                         const post = await axios.post(url, data);
                         this.getToDoList();
                 }
