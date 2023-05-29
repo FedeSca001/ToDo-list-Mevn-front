@@ -1,9 +1,7 @@
 <template>
   <h3>{{itemArray.title.charAt(0).toUpperCase()}}{{itemArray.title.slice(1).toLowerCase()}}</h3>
-  <h3 class="description">{{itemArray.text.charAt(0).toUpperCase()}}{{itemArray.text.slice(1).toLowerCase()}}</h3>
+  <p class="description">{{itemArray.text.charAt(0).toUpperCase()}}{{itemArray.text.slice(1).toLowerCase()}}</p>
   <h3>{{itemArray.priority}}</h3>
-  <h3 v-if="itemArray.status">Ok</h3>
-  <h3 v-else>Await</h3>
   <h3>
       <button class="btnDelete" @click="toDoList.deletItem(itemArray._id)">x</button>
   </h3>
@@ -28,6 +26,14 @@ h3{
   padding: 2vw;
   text-align: center;
   width: 20%;
+  background-color: rgba(255, 255, 255, 0.2);
+  font-size: 1.5vw;
+}
+p{
+  display: block;
+  padding: 2vw;
+  text-align: center;
+  width: 40%;
   background-color: rgba(255, 255, 255, 0.2);
   font-size: 1.5vw;
 }

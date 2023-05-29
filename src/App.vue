@@ -29,7 +29,7 @@ const showApp = JSON.parse(sessionStorage.getItem("user")) || false;
 <style>
 *{
   box-sizing: border-box;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   padding: 0px;
   margin: 0px;
 }
@@ -55,13 +55,11 @@ body{
 }
 .aside{
   grid-area: aside;
-  padding: 1.5vw;
-  background-image: linear-gradient(135deg,rgba(10, 68, 2, 0.466),rgb(44, 87, 8, 0.466),rgb(128, 115, 0, 0.466));
-  background-size: 280%;
+  padding: 1.1vw;
 }
 .article{
   grid-area: article;
-  background-image: linear-gradient(135deg,rgba(10, 68, 2, 0.466),rgb(44, 87, 8, 0.466),rgb(128, 115, 0, 0.466));
+  background-image: linear-gradient(135deg,rgba(10, 68, 2, 0.15),rgb(44, 87, 8, 0.15),rgb(128, 115, 0, 0.1));
   background-size: 100%;
 }
 .container{

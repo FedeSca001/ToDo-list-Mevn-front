@@ -3,9 +3,8 @@
     <ul class="listTasks">
       <li>
         <h3>Title</h3>
-        <h3>Text</h3>
+        <h3 class="textTask">Text</h3>
         <h3>Priority</h3>
-        <h3>Status</h3>
         <h3>Edit</h3>
       </li>
       <li v-for="item in toDoList.list" :key="item.id">
@@ -51,5 +50,11 @@ h3{
   padding: 2vw;
   text-align: center;
   width: 20%;
+}
+.textTask{
+  display: block;
+  padding: 2vw;
+  text-align: center;
+  width: 40%;
 }
 </style>
