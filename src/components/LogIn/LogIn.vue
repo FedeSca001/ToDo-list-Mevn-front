@@ -1,65 +1,112 @@
 <template>
-  <div  v-if="!createU" 
-        class="formContain">
-    <div class="divSep">
-      <label class="label">User Name</label>
-      <input class="inputData" type="text" v-model="user.logInU.name">
+  <div class="loginContainer">
+    <div v-if="createU">
+      <RegisterUser />
     </div>
-    <div class="divSep">
-      <label class="label">Password</label>
-      <input class="inputData" type="password" v-model="user.logInU.pass">
-    </div>
-    <div>
-      <button @click="user.logInUser()" class="sendBtn">Send</button>
+    <div v-else class="formContain">
+      <div class="formGroup">
+        <label class="label" for="login-name">User Name</label>
+        <input class="inputData" type="text" id="login-name" v-model="user.logInU.name">
+      </div>
+      <div class="formGroup">
+        <label class="label" for="login-password">Password</label>
+        <input class="inputData" type="password" id="login-password" v-model="user.logInU.pass">
+      </div>
+      <button @click="logInUser" class="sendBtn">Login</button>
+      <button @click="switchToRegister" class="registerBtn">Register</button>
     </div>
   </div>
-  <CreateUser v-else/>
 </template>
 
 <script setup>
-import CreateUser from '../LogIn/CreateUser.vue'
-import {useUsers} from '../../stores/user';
-const user = useUsers()
-user.logInU.name = "FedeSca001";
-user.logInU.pass = "lcdtm1234";
-const createU = user.createUser;
+import { ref } from 'vue';
+import RegisterUser from '../RegisterUser/RegisterUser.vue'
+import { useUsers } from '../../stores/user';
+
+const user = useUsers();
+const createU = ref(false);
+
+const logInUser = () => {
+  user.logInUser();
+};
+
+const switchToRegister = () => {
+  createU.value = true;
+};
 </script>
 
 <style scoped>
-.formContain{
+/* Estilos CSS */
+</style>
+
+
+<style scoped>
+.loginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f3f3f3;
+}
+
+.formContain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: rgba(255, 47, 47, 0.37);
-  border-radius: 2.5vw;
-  width: 25vw;
-  margin: 15vw auto;
-  padding: 3vw;
-  align-self: center;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  padding: 20px;
+  box-sizing: border-box;
 }
-.divSep{
-  margin-bottom: 1.3vw;
+
+.formGroup {
+  margin-bottom: 20px;
 }
-.label{
+
+.label {
   color: rgb(31, 0, 12);
   font-weight: 900;
-  font-size: 20pt;
-  margin-right: 1vw;
+  font-size: 18px;
+  margin-bottom: 5px;
 }
-.inputData{
-  border-radius: 0.4vw;
-  display: inline-block;
-  background-color: rgb(255, 201, 191);
-  margin-right: 0;
-}
-.sendBtn{
-  font-size: 1.8vw;
-  padding: 0.8vw 1.3vw;
+
+.inputData {
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
   border: none;
-  border-radius: 1vw;
+}
+
+.sendBtn {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   background-color: rgba(0, 105, 5, 0.623);
   color: white;
-  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
-.sendBtn:hover{
+
+.sendBtn:hover {
   background-color: rgba(0, 163, 11, 0.787);
-  box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.registerBtn {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(47, 176, 255, 0.37);
+  color: #000;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.registerBtn:hover {
+  background-color: rgba(47, 176, 255, 0.5);
 }
 </style>
