@@ -1,4 +1,5 @@
 <template>
+  <h3>Select:</h3>
   <router-link to="/allTasks" exact class="link"><div class="item">All tasks</div></router-link>
   <router-link to="/filtredPriority" exact class="link"><div class="item">Priority Filtred</div></router-link>
   <AddTask />
