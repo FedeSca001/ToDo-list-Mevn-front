@@ -1,6 +1,5 @@
 import axios from "axios";
 import { defineStore } from "pinia";
-const user = sessionStorage.getItem("user").name
 
 export const useToDoList = defineStore({
         id: "toDoList",
@@ -22,7 +21,7 @@ export const useToDoList = defineStore({
                                 resizeBy.send(err)
                         }
                 },
-                async addItemTask (tit, tex, prior){
+                async addItemTask (tit, tex, prior,user){
                         const data = {
                                 title: tit,
                                 text: tex,
@@ -33,6 +32,7 @@ export const useToDoList = defineStore({
                         const url = "https://to-do-list-nbcl.onrender.com/todo/item";
                         const post = await axios.post(url, data);
                         this.getToDoList();
+                        console.log(user);
                 }
         },
 });

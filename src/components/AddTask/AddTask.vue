@@ -4,7 +4,7 @@
     <input class="input" v-model="tit" type="text" placeholder="Title">
     <textarea class="texTarea" placeholder="Task text" v-model="tex">Text</textarea>
     <input class="input" type="number" placeholder="Priority" v-model="prior">
-    <button type="button" class="btnNew" @click="useToDo.addItemTask(tit, tex, prior)">Send</button>
+    <button type="button" class="btnNew" @click="useToDo.addItemTask(tit, tex, prior,user.data.name)">Send</button>
   </div>
 </template>
 
@@ -15,6 +15,7 @@ import { useToDoList } from '../../stores/toDo';
 const tit = ref('');
 const tex = ref('');
 const prior = ref('');
+const user = JSON.parse(sessionStorage.getItem("user"));
 const useToDo = useToDoList();
 </script>
 
