@@ -1,5 +1,6 @@
 import axios from "axios";
 import { defineStore } from "pinia";
+const user = sessionStorage.getItem("user").name
 
 export const useToDoList = defineStore({
         id: "toDoList",
@@ -11,7 +12,6 @@ export const useToDoList = defineStore({
                         const url = "https://to-do-list-nbcl.onrender.com/todo";
                         const dataGet = await axios.get(url);
                         this.list = await dataGet.data;
-                        console.log(this.list);
                 },
                 async deletItem (idItem){
                         try{
@@ -19,7 +19,7 @@ export const useToDoList = defineStore({
                                 const delet = await axios.delete(url);
                                 this.getToDoList();
                         } catch{
-                                err=> console.log(err);
+                                resizeBy.send(err)
                         }
                 },
                 async addItemTask (tit, tex, prior){
@@ -28,6 +28,7 @@ export const useToDoList = defineStore({
                                 text: tex,
                                 priority: prior,
                                 status: false,
+                                user: user
                         };
                         const url = "https://to-do-list-nbcl.onrender.com/todo/item";
                         const post = await axios.post(url, data);
