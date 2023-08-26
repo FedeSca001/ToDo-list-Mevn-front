@@ -23,8 +23,8 @@ export const useUsers = defineStore({
       try {
         const name = this.logInU.name;
         const pass = this.logInU.pass;
-        const url =
-          "https://to-do-list-nbcl.onrender.com/user/" +
+        const url = "https://to-do-list-nbcl.onrender.com/user/" //"http://localhost:5050/"
+          +
           String(name) +
           "/" +
           String(pass);
@@ -48,6 +48,7 @@ export const useUsers = defineStore({
           alert('Passwords do not match');
           return;
         }
+        //"http://localhost:5050/user/newUser"
         const url = 'https://to-do-list-nbcl.onrender.com/user/newUser';
         const userData = { name, lastName, email, password };
 
